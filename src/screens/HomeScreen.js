@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import NewsList from '../components/NewsList';
@@ -18,7 +18,7 @@ const HomeScreen = () => {
       });
       setArticles(response.data.articles);
     } catch (err) {
-      console.error('Error fetching data:', err);
+      Alert.alert('Error', 'Something went wrong while fetching the news items.');
     }
   };
 
